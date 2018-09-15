@@ -1,0 +1,18 @@
+namespace org.acme.model
+
+asset Coin identified by coinId {
+    o String coinId
+    --> Member owner
+}
+
+participant Member identified by memberId {
+    o String memberId
+    o String name
+    o Double balance
+}
+
+transaction Transfer {
+    o Double value
+    --> Member from
+    --> Member to
+}
